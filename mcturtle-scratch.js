@@ -8,6 +8,7 @@
     };
 
     function getreq(cmd) {
+        console.log(cmd + " start");
         $.ajax({
             type: "GET",
             url: "http://localhost:4715/" + cmd ,
@@ -15,7 +16,7 @@
                 console.log(cmd + " success");
             },
             error: function(jqxhr, textStatus, error) { 
-                console.log(cmd + "error : ", error);
+                console.log(cmd + " ERROR : ", error);
             }
         }); 
     };
@@ -34,13 +35,13 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            [" ", "move %m.move_dir", "move", "forward"],
-            [" ", "turn %m.turn_dir", "move", "left"],
-            [" ", "teleport to player", "tp"],
-            [" ", "set pen block id:%n block data:%n", "pen", 0, 0],
-            [" ", "say %s", "say", "Hello"],
-            [" ", "tell difference from player", "diff"],
-            [" ", "superpower %s", "superpower", ""],
+            [' ', "move %m.move_dir", "move", "forward"],
+            [' ', "turn %m.turn_dir", "move", "left"],
+            [' ', "teleport to player", "tp"],
+            [' ', "set pen block id:%n block data:%n", "pen", 0, 0],
+            [' ', "say %s", "say", "Hello"],
+            [' ', "tell difference from player", "diff"],
+            [' ', "superpower %s", "superpower", ""],
         ],
         menus: {
             move_dir: ["forward", "backward", "up", "down"],
